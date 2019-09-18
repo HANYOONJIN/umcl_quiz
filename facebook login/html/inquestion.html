@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html> 
+<head>
+    <script src="../lib/auth.js"></script>
+	<title><%= data.number %>번</title>
+</head>
+    <body>
+            <form method="POST">
+        </ul>
+            <div>
+                <h1><%= data.number %>번 - <%= data.title %></h1>
+                <hr>
+            </div>
+            <div>
+                <h2>문제</h2>
+            </div>
+            <div>
+                <p><%= data.content %></p>
+            </div>
+                <h2>입력</h2>
+                    <p><%= data.input %></p>
+                <h2>출력</h2>
+                    <p><%= data.output %></p>
+                <h2>예제 입력</h2>
+                    <p><%= data.exinput %></p>
+                <h2>예제 출력</h2>
+                    <p><%= data.exoutput %></p>
+                    <hr>
+                    <p>
+                        <textarea name="code" cols="30" rows="10"><%= data.code %></textarea>
+                    </p>
+                    <p>
+                        <input type="submit" value="전송하기">
+                    </p>
+                </form>
+                    <p>
+                        <textarea name="result" cols="30" rows="10"><%= completecode %></textarea>
+                    </p>
+        </body>
+</html>

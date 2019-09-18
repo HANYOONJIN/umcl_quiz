@@ -1,0 +1,71 @@
+
+app.get('/join',function(req,res){
+    fs.readFile('join.html', 'utf8', function(err,data){
+        res.send(data);
+    })
+})
+
+app.post('/join', function(req,res){
+    var body = req.body;
+
+    client.query('insert into user(email, pw) values (?,?)', [body.id, body.pw] , function(){
+        console.log("Sucess");
+        res.redirect('/');
+    });
+});
+
+app.get('/login',function(req,res){
+    fs.readFile('login2.html', 'utf8', function(error, data){
+        res.send(data);
+    })
+})
+
+passport.use(new LocalStrategy(
+    {
+        usernameField: 'email',
+        passwordField: 'pw'
+    },
+    function(username,password,done){
+        console.log('LocalStrategy', username, password);
+        var sql = 'Select * from user where email = ?';
+        client.query(sql,username,function(error, data){
+            if(username == data[0].email && password == data[0].pw){
+                return done(null, data);
+            }
+            else{
+                return done(null, false, {
+                    message: 'Uncorrect'
+                })
+            }
+        })
+    }
+));
+    
+    
+
+app.post('/login',
+    passport.authenticate('local',{
+        successRedirect: '/',
+        failureRedirect: '/login'
+    }
+));
+
+/*
+app.post('/login', function(req,res){
+    var body = req.body;
+    var sql = 'Select * from user where email = ?';
+
+    client.query(sql,[body.id],function(error, data){
+        if(body.id == data[0].email && body.pw == data[0].pw){
+            req.session.is_logined = true;
+            req.session.email = body.id; 
+            req.session.save(function(){
+                res.redirect('/');
+            })
+        }
+        else{
+            res.redirect('/join');
+        };
+    });
+});
+*/

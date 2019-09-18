@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"> 
+        <title>Insert Page</title>
+    </head>
+    <body>
+        <h1>Insert Page</h1>
+        <hr>
+        <form method="POST">
+            <fieldset>
+                <legend>INSERT DATA</legend>
+                <table>
+                    <tr>
+                        <td><label>Email</label></td>
+                        <td><input type="text" name="email" value="<%= data.email %>"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Title</label></td>
+                        <td><input type="text" name="title"></td>
+                    </tr>
+                    <tr>
+                        <td><label>문제</label></td>
+                        <td><input type="text" name="content"></td>
+                    </tr>
+                    <tr>
+                        <td><label>입력</label></td>
+                        <td><input type="text" name="input"></td>
+                    </tr>
+                    <tr>
+                        <td><label>출력</label></td>
+                        <td><input type="text" name="output"></td>
+                    </tr>
+                    <tr>
+                        <td><label>예제입력</label></td>
+                        <td><input type="text" name="exinput"></td>
+                    </tr>
+                    <tr>
+                        <td><label>예제출력</label></td>
+                        <td><input type="text" name="exoutput"></td>
+                    </tr>
+                    <tr>
+                        <td><label>CODE</label></td>
+                        <td><textarea name="code" cols="30" rows="10"></textarea></td>
+                    </tr>                           
+                </table>
+                <input type="submit" value="제출하기">
+            </fieldset>
+        </form>
+    </body>
+</html>

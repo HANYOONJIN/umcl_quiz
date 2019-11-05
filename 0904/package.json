@@ -26,7 +26,7 @@
     "mdbreact": "^4.13.0",
     "mobx": "^5.9.0",
     "mobx-react": "^5.4.3",
-    "mongoose": "^4.5.7",
+    "mongoose": "^5.7.5",
     "morgan": "^1.7.0",
     "mysql": "^2.16.0",
     "node-sass": "^4.11.0",

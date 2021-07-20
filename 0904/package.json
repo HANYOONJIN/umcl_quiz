@@ -39,7 +39,7 @@
     "react-addons-css-transition-group": "^15.6.2",
     "react-addons-update": "^15.6.2",
     "react-dom": "^15.1.0",
-    "react-native": "^0.59.2",
+    "react-native": "^0.62.3",
     "react-redux": "^4.4.5",
     "react-router": "^2.6.1",
     "react-router-dom": "^4.3.1",
